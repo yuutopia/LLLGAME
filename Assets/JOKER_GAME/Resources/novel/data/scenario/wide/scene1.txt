@@ -1,0 +1,71 @@
+;チュートリアル用スクリプトファイル
+
+;メッセージ表示
+[showmessage]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name"]
+
+
+[playbgm time="2" storage=nami01]
+
+;背景の新規定義
+[bg_new storage="yuusyougo"]
+
+;背景の表示
+[bg_show ]
+
+[wait time=2]
+
+今日も内浦の海は太陽の光を浴び輝いている。[p]
+まだ頭がぼーっとする。[r]
+現実なのか夢の中なのか分からなくなりそうだ[p]
+誰もいない海。ここから始まった。[p]
+長いようで短かった時間。[p]
+それは夢のように一瞬で過ぎていって、[p]
+夢のような輝きで私たちの時間を彩ってくれた。[l][p]
+
+私たちAqoursはラブライブで優勝した。[p]
+
+[wait time=1]
+
+#???
+「ちーかちゃん！」[p]
+
+[wait time=1]
+
+[chara_new name=you storage=you02 scale="1.5" y=-1 jname=曜 jcolor="#249390" ]
+;キャラクターを表示
+[show name=you]
+
+#千歌
+「曜ちゃんかぁーびっくりしたよー」[p]
+
+#曜
+「一人で黄昏てたね千歌ちゃん」[p]
+
+#千歌
+曜ちゃんはにこにこしながら私を見ている。[p]
+「ていうか、なんで曜ちゃんここにいるの？今日約束してたっけ？」[p]
+
+#曜
+「ふっふっふー。なんでだと思う？」[p]
+
+#千歌
+「えー！そこでまさかのクイズー？」[p]
+「んーっとねー！」[p]
+
+#曜
+「当たったら曜ちゃん特製のこのみかんをプレゼントしましょう！」[p]
+[hide name=you]
+
+;背景の新規定義
+[chara_new name=mikan storage=mikan scale="2" y=-1]
+
+[show name=mikan]
