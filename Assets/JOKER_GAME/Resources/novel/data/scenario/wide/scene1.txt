@@ -23,6 +23,7 @@
 
 [wait time=2]
 
+
 今日も内浦の海は太陽の光を浴び輝いている。[p]
 まだ頭がぼーっとする。[r]
 現実なのか夢の中なのか分からなくなりそうだ[p]
@@ -47,6 +48,9 @@
 #千歌
 「曜ちゃんかぁーびっくりしたよー」[p]
 
+[jump target="debug"]
+
+
 #曜
 「一人で黄昏てたね千歌ちゃん」[p]
 
@@ -61,6 +65,9 @@
 「えー！そこでまさかのクイズー？」[p]
 「んーっとねー！」[p]
 
+*debug
+ジャンプ先[p]
+
 #曜
 「当たったら曜ちゃん特製のこのみかんをプレゼントしましょう！」[p]
 [hide name=you]
@@ -69,3 +76,52 @@
 [chara_new name=mikan storage=mikan scale="2" y=-1]
 
 [show name=mikan]
+
+
+;ここから下、できればループで処理する。
+
+[select_new text="トレーニング？"target=*select_a1]
+[select_new text="私と梨子ちゃんを二人にしたくないから？"target=*select_a2]
+[select_new text="私に何か用事があったから？"target=*select_a3]
+
+[select_show sound=click]
+
+[s]
+
+*select_a1
+[hide name=mikan]
+[show name=you]
+#曜
+「ははは。さすがの私でもそれはきついかなあ～。」[p]
+[hide name=you]
+[select_new text="私と梨子ちゃんを二人にしたくないから？"target=*select_a2]
+[select_new text="私に何か用事があったから？"target=*select_a3]
+
+[select_show sound=click]
+
+[s]
+
+*select_a2
+[hide name=mikan]
+[show name=you]
+#曜
+「……千歌ちゃんからかってる？」[p]
+[hide name=you]
+;曜の表情を曇らせる
+[select_new text="トレーニング？"target=*select_a1]
+[select_new text="私に何か用事があったから？"target=*select_a3]
+
+[select_show sound=click]
+
+[s]
+
+*select_a3
+[hide name=mikan]
+[show name=you]
+#曜
+「せいかーい！はい、ご褒美のみかんです！」[p]
+@jump target=*a_common
+
+*a_common
+#千歌
+「それで、用事ってなに？Aqoursのこと？」
